@@ -14,6 +14,32 @@ The one feature I like is that you can generate tags for arbitrary locations in 
 
 ## Potential candidates for replacing Vimdoc
 
+I basically only know markdown
+
+### Markdown
+
+Pros:
+- Comprehensive spec (CommonMark)
+- Basically supported universally
+- You get a ton of tools for free, it's really easy to generate HTML
+- LSP already uses Markdown, making Markdown "first-class" in Neovim is definitely an idea I'm interested in
+
+Cons:
+- Apparently it's hard to make a tree-sitter grammar for it
+- How do you handle tags? Syntax extension via [markdown-it](https://github.com/markdown-it/markdown-it)?
+- How do you handle links to tags? Maybe a custom URL scheme like `tag://user-manual`? Syntax extension?
+- It's not uncommon for help documents to contain arbitrary indentation to make things look nicer. This is not possible in markdown because it gets interpreted as a code block. Maybe that's a job for anticonceal instead of hard-coding it?
+
+### AsciiDoc
+
+TODO
+
+### reStructuredText
+
+TODO
+
+### org-mode (hah!)
+
 TODO
 
 ## Specification
