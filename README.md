@@ -10,6 +10,8 @@ The way I see it, the Vimdoc format is limited in the following ways:
 - Since there's no spec, some syntax rules are only enforced through convention. It's not that uncommon for Vim help documents to contain tabular data, but since there are no syntax rules for tables, writers are free to chose any format. This makes it harder to build tools for Vimdocs.
 - It lacks features that I would consider "nice to have", like syntax highlighting in code blocks
 
+The one feature I like is that you can generate tags for arbitrary locations in a document, which makes documentation very discoverable. If another format is chosen to replace it, you would have to be able to elegantly add metadata to generate tags
+
 ## Potential candidates for replacing Vimdoc
 
 TODO
