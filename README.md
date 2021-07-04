@@ -22,7 +22,7 @@ Pros:
 - Comprehensive spec (CommonMark)
 - Basically supported universally
 - You get a ton of tools for free, it's really easy to generate HTML
-- LSP already uses Markdown, making Markdown "first-class" in Neovim is definitely an idea I'm interested in
+- LSP and `:checkhealth` already use Markdown, making Markdown "first-class" in Neovim is definitely an idea I'm interested in
 
 Cons:
 - Apparently it's hard to make a tree-sitter grammar for it
