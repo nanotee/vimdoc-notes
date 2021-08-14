@@ -170,7 +170,7 @@ syn match helpHyperTextJump	"\\\@<!|[#-)!+-~]\+|" contains=helpBar
 
 ##### Options
 
-Only characters allowed are lowercase ASCII characters OR `t_` followed by exactly two characters (any)
+The only characters allowed are lowercase alphabetic (ASCII-only) characters OR `t_` followed by exactly two characters (any)
 
 ```help
 'tagname'
@@ -198,6 +198,199 @@ syn match helpCommand		"`[^` \t]\+`"hs=s+1,he=e-1 contains=helpBacktick
 syn match helpCommand		"\(^\|[^a-z"[]\)\zs`[^`]\+`\ze\([^a-z\t."']\|$\)"hs=s+1,he=e-1 contains=helpBacktick
 ```
 
+#### Special
+
+##### Keycodes
+
+```help
+<Esc>
+<Enter>
+<S-Right>
+```
+
+Syntax definition:
+
+```vim
+syn match helpSpecial		"<[-a-zA-Z0-9_]\+>"
+syn match helpSpecial		"<[SCM]-.>"
+```
+
+##### Chords
+
+```help
+CTRL-O
+CTRL-SHIFT-A
+META-U
+ALT-J
+```
+
+Syntax definition:
+
+```vim
+syn match helpSpecial		"CTRL-."
+syn match helpSpecial		"CTRL-SHIFT-."
+syn match helpSpecial		"CTRL-Break"
+syn match helpSpecial		"CTRL-PageUp"
+syn match helpSpecial		"CTRL-PageDown"
+syn match helpSpecial		"CTRL-Insert"
+syn match helpSpecial		"CTRL-Del"
+syn match helpSpecial		"CTRL-{char}"
+syn match helpSpecial		"META-."
+syn match helpSpecial		"ALT-."
+```
+
+#### Eval
+
+##### Command modifiers
+
+```help
+:[count]command
+:command [++opt]
+```
+
+Syntax definition:
+
+```vim
+syn match helpSpecial		"\[N]"
+syn match helpSpecial		"\[range]"
+syn match helpSpecial		"\[line]"
+syn match helpSpecial		"\[count]"
+syn match helpSpecial		"\[offset]"
+syn match helpSpecial		"\[cmd]"
+syn match helpSpecial		"\[num]"
+syn match helpSpecial		"\[+num]"
+syn match helpSpecial		"\[-num]"
+syn match helpSpecial		"\[+cmd]"
+syn match helpSpecial		"\[++opt]"
+syn match helpSpecial		"\[arg]"
+syn match helpSpecial		"\[arguments]"
+syn match helpSpecial		"\[ident]"
+syn match helpSpecial		"\[addr]"
+syn match helpSpecial		"\[group]"
+```
+
+##### Parameters
+
+```help
+:command {arg1} {arg2}
+func({arg1}, {arg2})
+```
+
+Syntax definition:
+
+```vim
+syn match helpSpecial		"{[-_a-zA-Z0-9'"*+/:%#=[\]<>.,]\+}"
+```
+
+##### Optional
+
+Function arguments or command tails surrounded with `[]` brackets. No highlight group but it's used consistently in `:help`
+
+```help
+func({arg1}, {arg2} [, {optionalarg}])
+:longcommandwithop[tionaltail][!]
+```
+
+#### URL
+
+```help
+https://www.vim.org/
+https://neovim.io/
+mailto:user@host.com
+file:/etc/os-release
+```
+
+Syntax definition:
+
+```vim
+syn match helpURL `\v<(((https?|ftp|gopher)://|(mailto|file|news):)[^' 	<>"]+|(www|web|w3)[a-z0-9_-]*\.[a-z0-9._-]+\.[^' 	<>"]+)[a-zA-Z0-9/]`
+```
+
+#### Notices
+
+##### Note
+
+```help
+NOTE: info
+Note something
+```
+
+Syntax definition:
+
+```vim
+syn keyword helpNote		note Note NOTE note: Note: NOTE: Notes Notes:
+```
+
+##### Warning
+
+```help
+WARNING: info
+```
+
+Syntax definition:
+
+```vim
+syn keyword helpWarning		WARNING WARNING: Warning:
+```
+
+##### Deprecated
+
+```help
+DEPRECATED: use X instead
+```
+
+Syntax definition:
+
+```vim
+syn keyword helpDeprecated	DEPRECATED DEPRECATED: Deprecated:
+```
+
+#### Highlight groups
+
+```help
+	 Todo	add more stuff
+	*Error	scary error
+```
+
+Syntax definition:
+
+```vim
+syn match helpComment		"\t[* ]Comment\t\+[a-z].*"
+syn match helpConstant		"\t[* ]Constant\t\+[a-z].*"
+syn match helpString		"\t[* ]String\t\+[a-z].*"
+syn match helpCharacter		"\t[* ]Character\t\+[a-z].*"
+syn match helpNumber		"\t[* ]Number\t\+[a-z].*"
+syn match helpBoolean		"\t[* ]Boolean\t\+[a-z].*"
+syn match helpFloat		"\t[* ]Float\t\+[a-z].*"
+syn match helpIdentifier	"\t[* ]Identifier\t\+[a-z].*"
+syn match helpFunction		"\t[* ]Function\t\+[a-z].*"
+syn match helpStatement		"\t[* ]Statement\t\+[a-z].*"
+syn match helpConditional	"\t[* ]Conditional\t\+[a-z].*"
+syn match helpRepeat		"\t[* ]Repeat\t\+[a-z].*"
+syn match helpLabel		"\t[* ]Label\t\+[a-z].*"
+syn match helpOperator		"\t[* ]Operator\t\+["a-z].*"
+syn match helpKeyword		"\t[* ]Keyword\t\+[a-z].*"
+syn match helpException		"\t[* ]Exception\t\+[a-z].*"
+syn match helpPreProc		"\t[* ]PreProc\t\+[a-z].*"
+syn match helpInclude		"\t[* ]Include\t\+[a-z].*"
+syn match helpDefine		"\t[* ]Define\t\+[a-z].*"
+syn match helpMacro		"\t[* ]Macro\t\+[a-z].*"
+syn match helpPreCondit		"\t[* ]PreCondit\t\+[a-z].*"
+syn match helpType		"\t[* ]Type\t\+[a-z].*"
+syn match helpStorageClass	"\t[* ]StorageClass\t\+[a-z].*"
+syn match helpStructure		"\t[* ]Structure\t\+[a-z].*"
+syn match helpTypedef		"\t[* ]Typedef\t\+[Aa-z].*"
+syn match helpSpecial		"\t[* ]Special\t\+[a-z].*"
+syn match helpSpecialChar	"\t[* ]SpecialChar\t\+[a-z].*"
+syn match helpTag		"\t[* ]Tag\t\+[a-z].*"
+syn match helpDelimiter		"\t[* ]Delimiter\t\+[a-z].*"
+syn match helpSpecialComment	"\t[* ]SpecialComment\t\+[a-z].*"
+syn match helpDebug		"\t[* ]Debug\t\+[a-z].*"
+syn match helpUnderlined	"\t[* ]Underlined\t\+[a-z].*"
+syn match helpError		"\t[* ]Error\t\+[a-z].*"
+syn match helpTodo		"\t[* ]Todo\t\+[a-z].*"
+```
+
 ### Other stuff found in the wild
 
 #### Shell commands
@@ -207,4 +400,56 @@ syn match helpCommand		"\(^\|[^a-z"[]\)\zs`[^`]\+`\ze\([^a-z\t."']\|$\)"hs=s+1,h
 % cd test
 ```
 
-TODO: add more
+[Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/repeat.txt#L502-L504)
+
+#### Lists
+
+##### Unordered
+
+```help
+- Item 1
+- Item 2
+- Item 3
+```
+
+[Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/options.txt#L830-L859)
+
+##### Ordered
+
+```help
+1) Item 1
+2) Item 2
+3) Item 3
+```
+
+[Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/editing.txt#L1483-L1567)
+
+
+#### Tables
+
+Style 1:
+
+```help
+header1          header2 ~
+foo              barbazquux
+verylongword     test
+```
+
+[Reference 1](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/options.txt#L2582-L2595)
+[Reference 2](https://github.com/tpope/vim-fugitive/blob/6c53da0783a15d2dcde504ae299468ac69078ebe/doc/fugitive.txt#L571-L593)
+
+Style 2:
+
+These are similar to markdown/orgmode tables.
+Has to start with whitespace, otherwise row delimiters are highlighted as headers
+
+```help
+ -------------+-----------
+ header1      | header2  ~
+ -------------+-----------
+ foo          | barbazquux
+ verylongword | test
+ -------------+-----------
+```
+
+[Reference](https://github.com/junegunn/fzf.vim/blob/e34f6c129d39b90db44df1107c8b7dfacfd18946/doc/fzf-vim.txt#L115-L142)
