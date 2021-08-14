@@ -400,7 +400,7 @@ syn match helpTodo		"\t[* ]Todo\t\+[a-z].*"
 % cd test
 ```
 
-[Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/repeat.txt#L502-L504)
+- [Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/repeat.txt#L502-L504)
 
 #### Lists
 
@@ -412,7 +412,7 @@ syn match helpTodo		"\t[* ]Todo\t\+[a-z].*"
 - Item 3
 ```
 
-[Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/options.txt#L830-L859)
+- [Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/options.txt#L830-L859)
 
 ##### Ordered
 
@@ -422,7 +422,7 @@ syn match helpTodo		"\t[* ]Todo\t\+[a-z].*"
 3) Item 3
 ```
 
-[Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/editing.txt#L1483-L1567)
+- [Reference](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/editing.txt#L1483-L1567)
 
 
 #### Tables
@@ -435,8 +435,8 @@ foo              barbazquux
 verylongword     test
 ```
 
-[Reference 1](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/options.txt#L2582-L2595)
-[Reference 2](https://github.com/tpope/vim-fugitive/blob/6c53da0783a15d2dcde504ae299468ac69078ebe/doc/fugitive.txt#L571-L593)
+- [Reference 1](https://github.com/neovim/neovim/blob/6f0d4ccc43d7c8f5dd72d0d83e54e947d05117fa/runtime/doc/options.txt#L2582-L2595)
+- [Reference 2](https://github.com/tpope/vim-fugitive/blob/6c53da0783a15d2dcde504ae299468ac69078ebe/doc/fugitive.txt#L571-L593)
 
 Style 2:
 
@@ -452,4 +452,4 @@ Has to start with whitespace, otherwise row delimiters are highlighted as header
  -------------+-----------
 ```
 
-[Reference](https://github.com/junegunn/fzf.vim/blob/e34f6c129d39b90db44df1107c8b7dfacfd18946/doc/fzf-vim.txt#L115-L142)
+- [Reference](https://github.com/junegunn/fzf.vim/blob/e34f6c129d39b90db44df1107c8b7dfacfd18946/doc/fzf-vim.txt#L115-L142)
