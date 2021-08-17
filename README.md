@@ -5,7 +5,8 @@
 The recent stream celebrating the release of Neovim 0.5 briefly touched on Vim help files and echoed a lot of my sentiments regarding the format. I figured I might as well publish this since I'm not the only one who's interested in exploring possibilities for evolving/replacing the format.
 
 The way I see it, the Vimdoc format is limited in the following ways:
-- There's no spec or authoritative document describing the format. `:help help-writing` is a start, but many of the syntax groups are undocumented
+- There's no spec or authoritative document describing the format.
+  `:help help-writing` and `:help notation` are a start, but many of the syntax groups are undocumented
 - There's not a lot of tooling around it. This makes it a pain to generate HTML from Vimdoc and to automate documentation generation (I wrote a bunch of brittle scripts for nvim-lua-guide, and the experience was not pleasant)
 - Since there's no spec, some syntax rules are only enforced through convention. It's not that uncommon for Vim help documents to contain tabular data, but since there are no syntax rules for tables, writers are free to chose any format. This makes it harder to build tools for Vimdocs.
 - It lacks features that I would consider "nice to have", like syntax highlighting in code blocks
